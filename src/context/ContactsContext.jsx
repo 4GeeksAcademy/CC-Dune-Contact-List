@@ -12,17 +12,17 @@ export const ContactsProvider = ({ children }) => {
 
   const add = async (contact) => {
     const newContact = await api.addContact(contact);
-    setContacts(prev => [...prev, newContact]);
+    setContacts((prev) => [...prev, newContact]);
   };
 
   const update = async (id, updatedContact) => {
     const result = await api.updateContact(id, updatedContact);
-    setContacts(prev => prev.map(c => c.id === id ? result : c));
+    setContacts((prev) => prev.map((c) => (c.id === id ? result : c)));
   };
 
   const remove = async (id) => {
     await api.deleteContact(id);
-    setContacts(prev => prev.filter(c => c.id !== id));
+    setContacts((prev) => prev.filter((c) => c.id !== id));
   };
 
   return (

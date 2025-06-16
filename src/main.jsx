@@ -1,17 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router-dom"; // Import RouterProvider to use the router
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ContactList } from "./pages/ContactList";
 import { ContactForm } from "./pages/ContactForm";
 import { ContactsProvider } from "./context/ContactsContext";
 
-
 const Main = () => {
   return (
     <React.StrictMode>
-      {/* Provide global state to all components */}
       <StoreProvider>
-        {/* Set up routing for the application */}
         <RouterProvider router={router}></RouterProvider>
       </StoreProvider>
     </React.StrictMode>
