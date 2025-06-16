@@ -2,10 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom"; // Import RouterProvider to use the router
 import { ContactList } from "./pages/ContactList";
-import { ContactForm } from ".pages/ContactForm";
-import { ContactsProvider } from ".context/ContactsContext";
+import { ContactForm } from "./pages/ContactForm";
+import { ContactsProvider } from "./context/ContactsContext";
 
-import { StoreProvider } from "./hooks/useGlobalReducer"; // Import the StoreProvider for global state management
 
 const Main = () => {
   return (
