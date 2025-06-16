@@ -18,11 +18,19 @@ export const ContactForm = () => {
   }, [id, contacts]);
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    editing ? await update(id, form) : await add(form);
-    navigate("/");
-  };
+  
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  const data = Array.isArray(form) ? form[0] : form;
+  console.log("SUBMIT:", editing ? "UPDATE" : "ADD", data);
+  if (editing) {
+    await update(parseInt(id), data);
+  } else {
+    await add(data);
+  }
+  navigate("/");
+};
+
 
   return (
     <div className="container mt-5">
